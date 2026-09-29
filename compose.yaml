@@ -1,1 +1,22 @@
-# Placeholder: configure the local PostgreSQL service in the next setup step.
+services:
+  db:
+    container_name: relay
+    image: postgres:18.6
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-relay}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-relay_local_dev}
+      POSTGRES_DB: ${POSTGRES_DB:-relay}
+      PGDATA: /data/postgres
+    volumes:
+      - db:/data/postgres
+    ports:
+      - "127.0.0.1:5332:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+networks:
+  db:
+    driver: bridge
+volumes:
+  db:

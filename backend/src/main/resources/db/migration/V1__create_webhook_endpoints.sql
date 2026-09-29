@@ -1,0 +1,7 @@
+CREATE TABLE webhook_endpoints (
+    id UUID PRIMARY KEY,
+    url TEXT NOT NULL,
+    signing_secret TEXT NOT NULL,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE,
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
