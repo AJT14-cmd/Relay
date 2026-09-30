@@ -1,0 +1,12 @@
+{
+  "name": "relay-demo-receiver",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Dependency-free signed webhook receiver and failure simulator for Relay",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  }
+}

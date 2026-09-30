@@ -31,3 +31,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Local runtime and frontend ###
+.env
+.env.*
+!.env.example
+node_modules/
+**/dist/
+coverage/
+*.log
+.playwright/
